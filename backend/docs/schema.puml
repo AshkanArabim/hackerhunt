@@ -1,0 +1,33 @@
+@startuml
+entity User {
+    + id: UUID
+    + username: String
+    + email: String
+    + profilePic: Image - LATER
+    + bio: Text - LATER
+}
+
+entity Project {
+    + id: UUID
+    + title: String
+    + description: Text
+    + skills: JSON
+    + contributor_expectations: Text
+    + discord: String
+    + github: String
+    + post_acceptance_info: Text
+    + created_at: DateTime
+    + status: Enum{Open, Closed}
+}
+
+entity Application {
+    + id: UUID
+    + status: Enum{Pending, Accepted, Rejected}
+    + applied_at: DateTime
+}
+
+' Relationships
+User "1" -- "many" Project : "owns"
+User "1" -- "many" Application : "submits"
+Project "1" -- "many" Application : "receives"
+@enduml

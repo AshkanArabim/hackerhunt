@@ -24,6 +24,7 @@ MEDIA_URL = "/media/"
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# FIXME: security vulnerability vv
 SECRET_KEY = "django-insecure-v(lj2mjma-76y7)@f23yan9hoeo5z+$mn#no4j7-z)o_gg5(0("
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -54,6 +55,7 @@ INSTALLED_APPS = [
     "dj_rest_auth.registration",
     "corsheaders",
     "django_extensions",
+    "core"
 ]
 
 # src: https://pypi.org/project/django-cors-headers/
